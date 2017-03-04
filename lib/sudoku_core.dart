@@ -1,6 +1,6 @@
 library sudoku_core;
 
-export "package:sudoku_core/src/loupe.dart";
-export "package:sudoku_core/src/environment.dart";
-export "package:sudoku_core/src/board.dart";
-export "package:sudoku_core/src/solver.dart";
+export "src/loupe.dart";
+export "src/environment.dart";
+export "src/board.dart";
+export "src/solver.dart";
