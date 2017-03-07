@@ -7,9 +7,8 @@ typedef List<int> Eliminator([List<int> previousPositions]);
 
 class SudokuBoard {
   static Uint32List stringToProblemBuffer(String source) =>
-      new Uint32List.fromList(source
-          .split("")
-          .map((String e) => e == "." ? 0 : int.parse(e))
+      new Uint32List.fromList(source.runes
+          .map((int code) => code >= 0x31 && code <= 0x39 ? code - 0x30 : 0)
           .toList(growable: false));
 
   factory SudokuBoard.fromString(String source) =>
@@ -157,7 +156,8 @@ class SudokuBoard {
           }
         }
 
-        if (dumpAtLeastOnce && !dumpedAtLeastOnce && env != null) env.dump(loupe: loupe);
+        if (dumpAtLeastOnce && !dumpedAtLeastOnce && env != null)
+          env.dump(loupe: loupe);
 
         for (int i = 0; i < l; ++i) {
           loupe.index = i;

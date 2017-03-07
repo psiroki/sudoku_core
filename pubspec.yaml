@@ -1,2 +1,4 @@
 name: sudoku_core
 version: 0.9.0
+dev_dependencies:
+  test:
