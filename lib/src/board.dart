@@ -8,6 +8,7 @@ typedef List<int> Eliminator([List<int> previousPositions]);
 class SudokuBoard {
   static Uint32List stringToProblemBuffer(String source) =>
       new Uint32List.fromList(source.runes
+          .take(81)
           .map((int code) => code >= 0x31 && code <= 0x39 ? code - 0x30 : 0)
           .toList(growable: false));
 
